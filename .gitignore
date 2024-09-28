@@ -1,0 +1,11 @@
+# Ignore environment files
+*.env
+env/
+
+.env
+.env.local
+.env.*.local
+
+# Ignore specific folders
+folder_to_ignore/
+another_folder_to_ignore/

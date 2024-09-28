@@ -1,0 +1,38 @@
+{% extends 'bases.html' %} {% block title %}Traffic Prediction{% endblock %} {%
+block content %}
+<h2>Enter Information for Traffic Prediction</h2>
+<form action="/predict" method="POST">
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-control" name="date" required />
+  </div>
+  <div class="mb-3">
+    <label for="time" class="form-label">Time</label>
+    <input type="time" class="form-control" name="time" required />
+  </div>
+  <div class="mb-3">
+    <label for="temperature" class="form-label">Temperature (°C)</label>
+    <input type="number" class="form-control" name="temperature" required />
+  </div>
+  <div class="mb-3">
+    <label for="day" class="form-label">Day of the Week</label>
+    <select class="form-select" name="day" required>
+      <option value="0">Sunday</option>
+      <option value="1">Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="isholiday" class="form-label">Is it a holiday?</label>
+    <select class="form-select" name="isholiday" required>
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Predict Traffic</button>
+</form>
+{% endblock %}
